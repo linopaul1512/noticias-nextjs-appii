@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import  connectDB  from "@/app/libs/mongoDB";
 import Comentario from '@/app/models/comentario';
 
+//craer
 export async function POST(request) {
   try {
     await connectDB();
