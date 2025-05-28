@@ -7,8 +7,8 @@ export async function POST(request) {
   try {
     await connectDB();
     const data = await request.json();
-    const nuevComentario = new Comentario(data);
-    await nuevComentario.save();
+    const nuevoComentario = new Comentario(data);
+    await nuevoComentario.save();
     return NextResponse.json(nuevoComentario, { status: 201 });
   } catch (error) {
     return NextResponse.json({ error: 'Error al crear comentario' }, { status: 500 });
