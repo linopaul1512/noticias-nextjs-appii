@@ -3,6 +3,21 @@ import connectDB from "@/app/libs/mongoDB";
 import Usuario from "@/app/models/usuario";
 import bcrypt from "bcryptjs";
 
+
+
+export async function GET() {
+  try {
+    await connectDB();
+    const usuarios = await Usuario.find();
+    return NextResponse.json(usuarios, { status: 200 }); 
+
+  } catch (error) {
+    console.error("Error al obtener los usarios:", error);
+    return NextResponse.json({ error: 'Error al obtener los usuarios' }, { status: 500 });
+  }
+}
+
+
 export async function POST(request) {
   try {
     await connectDB ();
