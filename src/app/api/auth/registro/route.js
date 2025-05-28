@@ -1,8 +1,7 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import connectDB from "@/app/libs/mongoDB";
 import Usuario from "@/app/models/usuario";
 import bcrypt from "bcryptjs";
-
 
 export async function POST(request) {
   try {
@@ -10,7 +9,7 @@ export async function POST(request) {
 
     const data = await request.json();
 
-    // Verificar que mno estén vacíos ls documentos
+    // Verificar que no estén vacíos los documentos
     const camposRequeridos = ["nombre", "apellido", "nombreusuario", "tipo", "contrasena", "correo", "telefono"];
     for (const campo of camposRequeridos) {
       if (!data[campo]) {
