@@ -1,6 +1,8 @@
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import NoticiaCard from "../components/tarjetaNoticias";
+
+//
 export default function HomePage() {
   const noticiasDestacadas = [
     {
