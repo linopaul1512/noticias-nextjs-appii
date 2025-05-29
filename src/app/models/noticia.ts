@@ -26,6 +26,10 @@ const noticiaSchema = new mongoose.Schema(
     type: String,
     required: true,
     },
+    imagen: {
+    type: String,
+    required: true,
+    },
   },
   { timestamps: true }
 );
